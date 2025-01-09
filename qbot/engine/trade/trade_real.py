@@ -1,9 +1,13 @@
-import easytrader
-
+import sys
 from qbot.common.file_utils import file2dict
 from qbot.common.logging.logger import LOGGER as logger
 
+if sys.platform == 'win32':
+    sys.path.append(r'qbot\engine\trade\easytrader')
+else:
+    sys.path.append(r'qbot/engine/trade/easytrader')
 
+import easytrader
 class RealTradeEngine:
     def __init__(self, trade_opts: dict, syslog_obj, user=None):
         if syslog_obj:
@@ -22,7 +26,7 @@ class RealTradeEngine:
 
         if not user:
             if trade_opts["trade_type"] == "股票":
-                from qbot.engine.config import STOCK_REAL_ACCOUNT
+                from qbot.common.config import STOCK_REAL_ACCOUNT
 
                 accounts = file2dict(STOCK_REAL_ACCOUNT)
 
@@ -79,12 +83,12 @@ class RealTradeEngine:
                 else:
                     logger.error("当前还不支持该平台, 请联系微信 Yida_Zhang2")
             elif trade_opts["trade_type"] == "基金":
-                from qbot.engine.config import FUNDS_REAL_ACCOUNT
+                from qbot.common.config import FUNDS_REAL_ACCOUNT
 
                 accounts = file2dict(FUNDS_REAL_ACCOUNT)
 
             elif trade_opts["trade_type"] == "期货":
-                from qbot.engine.config import FUTURES_REAL_ACCOUNT
+                from qbot.common.config import FUTURES_REAL_ACCOUNT
 
                 accounts = file2dict(FUTURES_REAL_ACCOUNT)
 
@@ -100,7 +104,7 @@ class RealTradeEngine:
                     logger.error("当前还不支持该平台, 请联系微信 Yida_Zhang2")
 
             elif trade_opts["trade_type"] == "BTC":
-                from qbot.engine.config import BTC_REAL_ACCOUNT
+                from qbot.common.config import BTC_REAL_ACCOUNT
 
                 accounts = file2dict(BTC_REAL_ACCOUNT)
 
@@ -114,7 +118,7 @@ class RealTradeEngine:
                     logger.error("当前还不支持该平台, 请联系微信 Yida_Zhang2")
 
             elif trade_opts["trade_type"] == "期权":
-                from qbot.engine.config import OPTIONS_REAL_ACCOUNT
+                from qbot.common.config import OPTIONS_REAL_ACCOUNT
 
                 accounts = file2dict(OPTIONS_REAL_ACCOUNT)
 

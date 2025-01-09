@@ -3,8 +3,8 @@
 
 import wx
 
-from qbot.gui.mainframe import MainFrame
-
+# from qbot.gui.mainframe import MainFrame
+from qbot.mainframe import MainFrame
 if __name__ == "__main__":
     app = wx.App()
     frame = MainFrame(None, title="AI智能量化投研平台")

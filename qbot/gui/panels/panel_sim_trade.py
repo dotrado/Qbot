@@ -17,7 +17,7 @@ from qbot.common.macros import (
     strategy_choices,
     trade_platforms,
 )
-from qbot.engine.trade.trade_engine import TradeEngine
+from qbot.engine.trade_engine import TradeEngine
 
 # from qbot.gui.common.CodePool import ManageCodePool
 # from qbot.gui.common.CodeTable import ManageCodeTable

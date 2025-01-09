@@ -1,22 +1,28 @@
+量化交易入门必读：[量化策略的分类和原理](docs/01-新手指引/量化策略的分类和原理.md)
+
 # 分层设计、事件驱动
+
+DATA统一表达、策略模板统一表达
+
+<img src="framework.png">
 
 ## 分层设计
 
-[数据层](qbot/data/)：数据获取抽象封装
+- <i><b>[数据层](qbot/data/)</b></i>：数据获取抽象封装
 
-[策略层](qbot/strategy/)：多因子、动量、机器学习、强化学习、深度学习策略
+- <i><b>[策略层](qbot/strategy/)</b></i>：多因子、动量、机器学习、强化学习、深度学习策略
 
-[Engine层](qbot/engine/)：回测引擎、模拟交易、实盘交易
+- <i><b>[Engine层](qbot/engine/)</b></i>：回测引擎、模拟交易、实盘交易
 
-[接口层](qbot/engine/trading/)：交易接口封装，包含多平台的模拟和实盘交易
+- <i><b>[接口层](qbot/engine/trading/)</b></i>：交易接口封装，包含多平台的模拟和实盘交易
 
-[通知层](qbot/notify/)：系统监控服务、消息通知（系统弹窗、邮件、飞书、微信、钉钉、企业微信等）                         
+- <i><b>[通知层](qbot/notify/)</b></i>：系统监控服务、消息通知（系统弹窗、邮件、飞书、微信、钉钉、企业微信等）                         
 
-[分析层](qbot/analyser/)：原始数据清洗、股票[指标](qbot/engine/indicator/)、[算子库](qbot/engine/algo/)、评测结果分析
+- <i><b>[分析层](qbot/analyser/)</b></i>：原始数据清洗、股票[指标](qbot/engine/indicator/)、[算子库](qbot/engine/algo/)、评测结果分析
 
-[扩展层](qbot/extension/)：其他功能插件服务，如[QInvestool](backend/investool/)、[fund-strategies 基金分析工具](backend/fund-strategies/)、[股票基金管家](frontend/web-extension)等
+- <i><b>[扩展层](qbot/extension/)</b></i>：其他功能插件服务，如[QInvestool](backend/investool/)选股、[fund-strategies 基金分析工具](backend/fund-strategies/)、[股票基金管家](frontend/web-extension)等
 
-> [!NOTE] (Charmve):
+> [!NOTE]
 > 接口层和Engine层会考虑重新调整。
 
 ## 前后端分离
@@ -33,4 +39,3 @@
 整个Qbot开发语言主要是Python，基于wxPython gui框架搭建而成。另外，后台插件服务QInvestool采用go语言开发、fund-strategies 基金分析工具和股票基金管家浏览器插件采用JavaScript开发.
 
 - WXPython 开发手册 https://wizardforcel.gitbooks.io/wxpy-in-action/content/6.html
-- 

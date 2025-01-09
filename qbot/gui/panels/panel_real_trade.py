@@ -19,7 +19,8 @@ from qbot.common.macros import (
 )
 
 # from qbot.engine.config import MULTI_FACTS_DIR
-from qbot.engine.trade.trade_engine import TradeEngine
+# from qbot.engine.trade.trade_engine import TradeEngine
+from qbot.engine.trade_engine import TradeEngine
 
 # from qbot.gui.common.CodePool import ManageCodePool
 # from qbot.gui.common.CodeTable import ManageCodeTable
